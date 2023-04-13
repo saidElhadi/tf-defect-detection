@@ -2,7 +2,7 @@ import cv2
 import os
 import numpy as np
 
-def main(train_dataset_dir = 'dataset/train',  test_dataset_dir = 'dataset/test'):
+def load_dataset(train_dataset_dir = 'dataset/train',  test_dataset_dir = 'dataset/test'):
     # Set the path to the dataset directory
     # Initialize empty arrays for storing the images and masks
     images = []
@@ -29,3 +29,7 @@ def main(train_dataset_dir = 'dataset/train',  test_dataset_dir = 'dataset/test'
     # Convert the image and mask arrays to numpy arrays
     images = np.array(images)
     masks = np.array(masks)
+
+    return zip(images, masks)
+
+print(load_dataset())
